@@ -13,8 +13,8 @@ app.use(express.static("app/public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
-require("./app/routes/api-routes.js")(app);
-require(".app/routes/html-routes.js")(app);
+var routes = require("./controllers/burgers_controller.js");
+
 
 app.listen(PORT, function(){
     console.log("app listening on: http://localhost: " + PORT);
